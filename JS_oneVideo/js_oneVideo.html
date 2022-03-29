@@ -1,0 +1,240 @@
+<input>
+
+<head>
+    <title>JS IN ONE VIDEO</title>
+</head>
+
+<body>
+
+
+
+    <!-- event -->
+    <button onmouseout="event_Function()">Click Me_onmouseout</button><br>
+    <button onmouseover="event_Function()">Click Me_onmouseover</button><br>
+    <button onmousedown="event_Function()">Click Me_onmousedown</button><br>
+    <button onclick="event_Function()">Click Me_onclick</button><br>
+
+    <!-- eval -->
+    <form name="example">
+        <input type="text" size="20" name="Calculator">
+        <input type="button" name="B1" value="Calculate" onclick="cal()">
+        <input type="reset" size="B2" name="Reset">
+        <input type="text" size="20" name="answer6">
+    </form>
+
+    <!-- window.location -->
+    <input type="button" onclick="window_Function()" value="Click Me_window.location"></input><br>
+
+    <!-- confirm -->
+    <input type="button" onclick="confirmation()" value="Click Me_confirm"></input><br>
+
+    <!-- prompt -->
+    <input type="button" onclick="prompt_Box()" value="Click Me_prompt"></input><br>
+
+    <!-- validation -->
+    <form name="myForm" onsubmit="return validation()">
+        UserName : <input type="text" value="" id="user"><span id="username"></span><br><br>
+        Password : <input type="password" value="" id="password"><span id="userpassword"></span><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+
+    <script>
+
+
+
+        //alert
+        alert('Hello World');
+        document.write("Hello world here<br>");
+
+
+        //maths
+        var a = 10;
+        var b = 20;
+        var c = a + b;
+        var d = ++a;
+        var e = Math.floor(10.99);
+        var f = Math.floor(-25.42);
+        var g = Math.round(4.5);
+        var h = Math.log(10);
+        var i = Math.max(1, 2, 45, 92, 764, 12, 11, 37);
+        var j = Math.min(1, 2, 45, 92, 764, 12, 11, 37);
+        var k = Math.pow(4, 2);
+        var l = Math.sqrt(25);
+        var m = Math.random();
+        document.write(c + '<br>');
+        document.write(d + '<br>');
+        document.write(e + '<br>');
+        document.write(f + '<br>');
+        document.write(g + '<br>');
+        document.write(h + '<br>');
+        document.write(i + '<br>');
+        document.write(j + '<br>');
+        document.write(k + '<br>');
+        document.write(l + '<br>');
+        document.write(m + '<br>');
+
+
+        //if else
+        if (a > b) {
+            document.write("its true<br>");
+        } else {
+            document.write("its false<br>")
+        }
+        if (d < c) {
+            document.write("its true<br>");
+        } else {
+            document.write("its false<br>")
+        }
+
+
+        //switch        
+        switch (b) {
+            case 10: document.write("its a value of 10<br>");
+                break;
+            case 20: document.write("its a value of 20<br>");
+                break;
+        }
+
+
+        //loop
+        //while loop
+        var count = 5;
+        while (count < 10) {
+            document.write("while loop<br>");
+            count++;
+        }
+        //do while loop
+        var count = 15;
+        do {
+            document.write("do while loop<br>");
+            count++;
+        } while (count < 10);
+        //for loop
+        var count = 7;
+        for (let i = 0; i < count; i++) {
+            document.write("for loop<br>");
+        }
+
+
+        //arrays
+        // var arrays = new Array("hello", "world");   //this & below are same 
+        var arrays = ["hello", "world"];
+        document.write(arrays[1]);
+
+
+        //concat
+        var alpha = ["a", "b", "c"];
+        var numeric = [1, 2, 3];
+        var alphaNumeric = alpha.concat(numeric);
+        document.write("<br>alphaNumeric : " + alphaNumeric + "<br>");
+
+
+        //sort
+        var sort_here = new Array(5);
+        sort_here[0] = "java";
+        sort_here[1] = "PHP";
+        sort_here[2] = "Android";
+        sort_here[3] = "IpHonE";
+        sort_here.sort();
+        document.write(sort_here[0] + "<br>");
+        document.write(sort_here[1] + "<br>");
+        document.write(sort_here[2] + "<br>");
+        document.write(sort_here[3] + "<br>");
+
+
+        //function
+        function sum(x, y) {
+            var z = x + y;
+            document.write(z + "<br>");
+        }
+        sum(50, 50);
+
+
+        //string
+        var str = "Javascript";
+        var answer1 = str.length;                        //length
+        var answer2 = str.charAt(4);                     //charAt
+        var answer3 = str.charCodeAt(5);                 //charCodeAt
+        var answer4 = str.indexOf('s');                  //indexOf
+        var str_lC = new String("Hello_World");
+        var answer5 = str_lC.localeCompare("Hello");     //localeCompare
+        document.write(answer1 + "<br>");
+        document.write(answer2 + "<br>");
+        document.write(answer3 + "<br>");
+        document.write(answer4 + "<br>");
+        document.write("localeCompare first : " + answer5 + "<br>");
+
+
+        //event
+        function event_Function() {                       //button for this is given above script
+            document.write("Welcome Everyone<br>")
+        }
+
+
+        //eval
+        function cal() {                                 //input for this is given above script
+            document.example.answer6.value = eval(document.example.Calculator.value)    //this type of method use inplace of document.getElementById()
+        }
+
+
+        //window.location                                         
+        function window_Function() {                    //input for this is given above script
+            debugger;
+            window.location = "https://www.youtube.com/"
+        }
+
+
+        //dialog boxes
+        //alert & confirm
+        function confirmation() {                           //button for this is given above script
+            var confirm_Box = confirm("You Want To See YOUTUBE");
+            if (confirm_Box) {
+                alert("Welcome To YOUTUBE")
+                window.location = "https://www.youtube.com/"
+            } else {
+                alert("Sorry! You Cancel To See YOUTUBE")
+            }
+        }
+        //prompt
+        function prompt_Box() {                             //button for this is given above script
+            var str_prompt = prompt("Hi My Name Is JS & What's Your Name ", "")
+            alert("Nice To Meet Your " + str_prompt + "!")
+        }
+
+
+        //date
+        document.write(Date() + "<br>");
+        var dt = new Date();                               // to set the value date as per our requirment , var dt = new Date("Dec 17,2020 23:30:00");  & in place of get we use dt.setDate to change as per desire.
+        document.write("getDay() : " + dt.getDay() + "<br>");
+        document.write("getFullYear() : " + dt.getFullYear() + "<br>");
+        document.write("Milliseconds() : " + dt.getMilliseconds() + "<br>");
+        document.write("Hours() : " + dt.getHours() + "<br>");
+        document.write("Minutes() : " + dt.getMinutes() + "<br>");
+        document.write("getMonth() : " + dt.getMonth() + "<br>");
+        document.write("Seconds() : " + dt.getSeconds() + "<br>");
+        document.write("getTime() : " + dt.getTime() + "<br>");  //<- it is from 1-Jan-1970 counted in milliseconds
+
+
+        //validation
+        function validation() {                           //input for this is given above script
+            var user_Name = document.getElementById("user").value;
+            var user_Password = document.getElementById("password").value;
+            if (user_Name == "") {
+                document.getElementById("username").innerHTML = "**Please fill User Name";
+                return false;
+            }
+            if (user_Password == "") {
+                document.getElementById("userpassword").innerHTML = "**Please fill User Password";
+                return false;
+            }
+        }
+
+
+
+    </script>
+</body>
+</head>
+
+</html>
